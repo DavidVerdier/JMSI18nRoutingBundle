@@ -4,7 +4,6 @@ namespace JMS\I18nRoutingBundle\Router;
 
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Translation\LoggingTranslator;
-use Symfony\Component\Translation\DataCollectorTranslator;
 use Symfony\Component\Translation\TranslatorBagInterface;
 use Symfony\Component\Routing\Route;
 
@@ -27,7 +26,7 @@ class DefaultPatternGenerationStrategy implements PatternGenerationStrategyInter
     private $cacheDir;
     private $defaultLocale;
 
-    public function __construct($strategy, DataCollectorTranslator $translator, array $locales, $cacheDir, $translationDomain = 'routes', $defaultLocale = 'en')
+    public function __construct($strategy, $translator, array $locales, $cacheDir, $translationDomain = 'routes', $defaultLocale = 'en')
     {
         $this->strategy = $strategy;
         $this->translator = $translator;
